@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Jogo de matemática</title>
+</head>
+<body>
+    
+    <!--Content-->
+    <div class="content">
+        <img src="./img/Math.svg" alt="">
+        <div class="itens">
+            <h1>Matemática</h1><br><br><br>
+            <p>Este jogo se baseia em cálculos de Matemática para melhorar o desempenho dos alunos.</p><br><br><br>
+             <!-- <p>Escolha uma Modalidade: Selecione entre subtração, adição, divisão ou multiplicação.<br>
+                Resolva as Questões: Responda a várias questões com três alternativas para cada uma.<br>
+                Acumule Pontos: Marque a alternativa correta para ganhar pontos.<br>
+                Objetivo: Chegue a 10 pontos para vencer.</p><br> -->
+            <button onclick="playGame()">jogar</button>
+        </div>
+    </div>
+
+    <div class="placar">
+        <h2>Placar:</h2>
+        <div class="users">
+            <div class="user-info">
+                <div class="user-avatar">y</div>
+                <div class="user-name">Yudi Yan</div>
+                <div class="user-points">100p</div>
+                <a href="https://www.youtube.com/@rapaizzin" target="_blank"><img class="youtube" src="img/youtube.icon.png" alt="YouTube"></a>           
+                <a href="https://www.tiktok.com/@rapaizzin" target="_blank"><img class="tiktok" src="img/tiktok_logo_render_by_ijungakrom_dfu7fxi-fullview-removebg-preview.png" alt="TikTok"></a>
+            </div>
+        </div> 
+        <div class="users">
+            <div class="user-info">
+                <div class="user-avatar">H</div>
+                <div class="user-name">Hiran </div>
+                <div class="user-points">100p</div>
+            </div>
+        </div> 
+        <div class="users">
+            <div class="user-info">
+                <div class="user-avatar">J</div>
+                <div class="user-name"> Júlia</div>
+                <div class="user-points">100p</div>
+            </div>
+        </div> 
+    
+    </div>
+
+   <!-- Modal de Carregamento -->
+<div id="loading-modal" class="modal">
+    <div class="modal-content">
+        <div class="spinner"></div>
+        <div class="rules">
+            <h2>Regras</h2><br>
+            <p>1. Escolha uma Modalidade: Selecione entre subtração, adição, divisão ou multiplicação.<br><br>
+                2. Resolva as Questões: Responda a várias questões com três alternativas para cada uma.<br><br>
+                3. Acumule Pontos: Marque a alternativa correta para ganhar pontos.<br><br>
+                4. Objetivo: Chegue a 10 pontos para vencer.<br></p><br>
+                <button onclick="avancar()">Avançar <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="game-mode" style="display: none;">
+            <h2>Escolha o Modo</h2><br>
+            <button onclick="startGame('addition')">Adição</button><br>
+            <button onclick="startGame('subtraction')">Subtração</button><br>
+            <button onclick="startGame('multiplication')">Multiplicação</button><br>
+            <button onclick="startGame('division')">Divisão</button><br>
+        </div>
+    </div>
+</div>
+
+
+    <div class="particles">
+        <!-- Particles are added programmatically via JavaScript for better control -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

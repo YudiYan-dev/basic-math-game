@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, #1e1e1e, #000);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ajusta para garantir que o body ocupe toda a altura da janela */
+    margin: 0;
+    gap: 20px;
+}
+
+.content {
+    z-index: 2;
+    background-color: #1a1a1a;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 10px;
+}
+
+.placar {
+    z-index: 2;
+    background-color: #1a1a1a;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center;
+    padding: 20px;
+    gap: 20px; /* Ajusta o espaçamento entre os itens */
+}
+
+.users {
+    width: 100%;
+    overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que o contêiner */
+}
+
+.user-info {
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1px; /* Espaçamento entre os itens de usuário */
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #b0e0e6; /* Cor de fundo para o avatar */
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.user-name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.user-points {
+    background-color: #b0e0e6; /* Cor de fundo para os pontos */
+    color: #1a1a1a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.itens {
+    text-align: center; /* Centraliza o texto dentro da .itens */
+}
+
+h1 {
+    font-size: 36px;
+    color: #ffffff; /* Ajuste a cor conforme necessário */
+    margin-bottom: 20px;
+    align-content: flex-start;
+}
+
+h2{
+    color: #fff;
+}
+
+p {
+    font-size: 18px;          /* Tamanho da fonte */
+    color: #fff;              /* Cor do texto */
+    text-align: center;         /* Alinha o texto à esquerda */
+}
+
+
+button {
+    padding: 10px 30px; /* Ajusta o padding para o botão */
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px; /* Reduz o tamanho da fonte para o botão */
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #8dbec5;
+    border: 3px solid #8dbec5;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Ajusta a transição para suavizar o efeito */
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.1); /* Ajusta o efeito hover para menos intenso */
+    background-color: #8dbec5;
+    color: #fff;
+}
+
+img {
+    width: 420px;
+}
+
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #b0e0e6;
+    pointer-events: none;
+    animation: particleAnimation 15s linear infinite;
+    opacity: 0;
+    box-shadow: 0 0 2rem #b0e0e644;
+}
+
+.particle:nth-child(even) {
+    background-color: #69bfca;
+    box-shadow: 0 0 2rem #69bfca44;
+}
+
+@keyframes particleAnimation {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    25% { opacity: 0.6; }
+    50% { transform: translateY(-50vh) scale(0.7); opacity: 0.3; }
+    75% { opacity: 0.6; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+/* Estilos do modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(25px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #2b2b2b;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-bottom: 10px;
+    max-width: 400px;
+}
+
+.spinner {
+    border: 8px solid #444444; /* Cor do fundo */
+    border-top: 8px solid #8dbec5; /* Cor da borda de carregamento */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rules{
+    display: none;
+}
+
+.rules button {
+    padding: 10px 20px; /* Ajusta o padding para o botão */
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; /* Reduz o tamanho da fonte para o botão */
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #8dbec5;
+    border: 3px solid #8dbec5;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Ajusta a transição para suavizar o efeito */
+}
+
+.rules button:hover {
+    transform: translateY(-5px); /* Ajusta o efeito hover para menos intenso */
+    background-color: #8dbec5;
+    color: #fff;
+}
+
+.game-mode {
+    display: none;
+}
+
+.game-mode button {
+    margin-bottom: 15px;
+    min-width: 200px; /* Define uma largura mínima para os botões */
+    width: 200px; /* Define uma largura fixa para os botões */
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; /* Reduz o tamanho da fonte para o botão */
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #fff;
+    background-color: #8dbec5;
+    border-radius: 13px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Ajusta a transição para suavizar o efeito */
+}
+
+.game-mode button:hover {
+    background-color: transparent;
+    color: #8dbec5;
+    min-width: 210px;
+    width: 210px;
+    border: 4px solid #8dbec5;
+}
+
+
+.game-mode h2 {
+    font-size: 35px;
+}
+
+#quiz-container {
+    text-align: center;
+    background: #000000b0;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button.answer-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #171717d4;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 15px;
+    transition: .5s ease-in-out;
+    border: 2px dashed transparent;
+}
+
+button.answer-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+button.answer-button:hover {
+    background-color: transparent;
+    border: 2px dashed #69bfca;
+    box-shadow: 0 0 2rem #69bfca;
+    transform: translateY(10px);
+}
+
+#result-container {
+    margin-top: 20px;
+}
+
+.youtube {
+     
+     width: 30px;
+
+}
+
+.tiktok {
+
+    width: 30px;
+}
